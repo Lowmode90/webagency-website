@@ -1,0 +1,273 @@
+/* --- GENERAL --- */
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  @font-face {
+      font-family: 'Roboto';
+      src: url('Roboto-Regular.ttf') format('truetype'),
+           url('roboto-regular-webfont.woff') format('woff'),
+           url('roboto-regular-webfont.woff2') format('woff2'),
+           url('Roboto-Medium.ttf') format('truetype'),
+           url('roboto-medium-webfont.woff') format('woff'),
+           url('roboto-medium-webfont.woff2') format('woff2'),
+           url('Roboto-Light.ttf') format('truetype'),
+           url('roboto-light-webfont.woff') format('woff'),
+           url('roboto-light-webfont.woff2') format('woff2'),
+           url('Roboto-Bold.ttf') format('truetype'),
+           url('roboto-bold-webfont.woff') format('woff'),
+           url('roboto-bold-webfont.woff2') format('woff2') ;
+  }
+}
+
+/* --- NAV --- */
+nav {
+    background-color: #10405c;
+    height: 10vh;
+}
+
+nav a {
+    color: #f1f1f1;
+    font-size: 20px;
+}
+
+.navbar-brand {
+    border: 2px solid #f1f1f1;
+    border-radius: 50px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* --- HEADER --- */
+header {
+    padding-top: 50px;
+    background: url('./Ressources/images/header.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    color: #f1f1f1;
+}
+
+header hr {
+    margin: auto;
+    width: 50%;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+
+
+/* --- TEAM --- */
+#team {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #252627;
+}
+
+#team hr {
+    margin: auto;
+    width: 50%;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+#team h2 {
+    margin-bottom: 40px;
+}
+ 
+.teamProfile {
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+}
+
+.card-title {
+    margin-top: 10px;
+}
+
+.card-text {
+    margin-top: -10px;
+}
+
+/* --- PORTFOLIO --- */
+#portfolio {
+    background: #2a8042;
+    color: #f1f1f1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.portfolioImg {
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+    box-shadow:  9px 11px 15px -2px rgba(0,0,0,0.23);
+    overflow: hidden;
+}
+
+#btnContact, #btnPortfolio {
+    text-decoration: none;
+}
+
+.lesProjets {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "premier deuxieme troisieme quatrieme";
+}
+#projet1 {
+    grid-area: premier;
+}
+#projet2 {
+    grid-area: deuxieme;
+}
+#projet3 {
+    grid-area: troisieme;
+}
+#projet4 {
+    grid-area: quatrieme;
+}
+
+/* --- FOOTER --- */
+#footer {
+    color: #f1f1f1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#footer hr {
+    height: 1px;
+    background: #616669;
+}
+
+#contact {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.form-control {
+    margin-bottom: 8px;
+}
+
+#contact input::placeholder, textarea::placeholder {
+    text-align: center;
+}
+
+#contact textarea {
+    border-radius: 25px;
+}
+#contact textarea::placeholder {
+    line-height: 105px;
+}
+
+#footBanniere {
+    padding-top: 30px;
+}
+
+#follow {
+    margin-right: 30px;
+}
+
+.fab {
+    font-size: 30px;
+    margin-right: 10px;
+    line-height: 1px;
+}
+
+#fab1, #fab2, #fab3, #fab4, #fab5 {
+    color: #616669;
+}
+
+.fab:hover {
+    font-size: 40px;
+    color: #f1f1f1;
+}
+
+
+/* --- MEDIA QUERIES --- */
+@media screen and (max-width: 767px) {
+    /* Header */
+    header{
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    /* Team */
+    #notreEquipe {
+        font-size: 23px;
+    }
+    #commEquipe {
+        font-size: 15px;
+    }
+
+    /* Portfolio */
+    #lePortfolio {
+        font-size: 23px;
+    }
+    .lesProjets {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas:
+            "premier" 
+            "deuxieme" 
+            "troisieme" 
+            "quatrieme";
+    }
+    #projet1, #projet2, #projet3, #projet4 {
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* Footer */
+    #nousEcrire {
+        font-size: 23px;
+    }
+    #follow {
+        display: none;
+    }
+    #copyright {
+        font-size: x-small;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* Header */
+    header{
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    /* Portfolio */
+    .lesProjets {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        grid-template-areas:
+            "premier deuxieme"  
+            "troisieme quatrieme";
+    }
+    #projet1, #projet2, #projet3, #projet4 {
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* Footer */
+    #follow {
+        display: none;
+    }
+    #copyright {
+        font-size: x-small;
+    }
+}
